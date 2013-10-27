@@ -4,8 +4,8 @@
  *  The header file for the parsing module for TagML. 
  *
  *  AUTHOR: David N. Robinson
- *  DATE:   10.14.2013
- *  VER:    0.1
+ *  DATE:   10.23.2013
+ *  VER:    0.11
  */
 
 #include <libxml/xmlmemory.h>
