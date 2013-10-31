@@ -8,11 +8,13 @@
  *  VER:    0.11
  */
 
-#include <libxml/xmlmemory.h>
-#include <libxml/parser.h>
+#include <config.h>
 
 #ifndef PARSE
 #define PARSE
+
+#include <libxml/xmlmemory.h>
+#include <libxml/parser.h>
 
 /******************************************************************************
  * FUNCTION: parseDoc(char *docname)

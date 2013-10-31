@@ -10,6 +10,8 @@
  *  VER:    0.1
  */
 
+#include <config.h>
+
 #ifndef MAP
 #define MAP
 #define MAX_DESC_LENGTH 255
@@ -22,25 +24,25 @@
  */
 
 struct map_node {
-    char *description;
-}
+    char *desc;     //string description of map node
+};
 
-typedef map_node MapNode;
+typedef struct map_node MapNode;
 
 struct map {
     int rows;
-    int columns;
+    int cols;
     MapNode **data;
-}
+};
 
-typedef map Map;
+typedef struct map Map;
 
 /******************************************************************************
  * FUNCTION: createMapNode()
  * -------------------------
  *  Function to properly allocate memory for a MapNode struct
  */
-*MapNode createMapNode();
+MapNode* createMapNode();
 
 /******************************************************************************
  * FUNCTION: destroyMapNode(MapNode *node)
@@ -54,13 +56,13 @@ void destroyMapNode(MapNode *node);
  * ---------------------------------------
  *  Function to properly allocate memory for a Map struct
  */
-*Map createMap();
+Map* createMap(int rows, int cols);
 
 /******************************************************************************
  * FUNCTION: destroyMapNode(MapNode *node)
  * ---------------------------------------
  *  Function to properly deallocate memory for a Map struct
  */
-void destroyMap(Map map);
+void destroyMap(Map *map);
 
 #endif

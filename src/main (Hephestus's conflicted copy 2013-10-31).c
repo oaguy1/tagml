@@ -12,17 +12,11 @@
 #include "map.h"
 
 int main(void) {
-    int i, j;
-    Map *map;
+    MapNode *mn = createMapNode();
+    mn->desc = "Welcome!";
 
-    map = createMap(2, 2);
-
-    for(i = 0; i < map->rows; i++) {
-        for(j = 0; j < map->cols; j++) {
-        map->data[i+j] = createMapNode();
-        sprintf(map->data[i+j]->desc,"%d:%d", i, j);
-        }
-    }
+    printf("%s\n", mn->desc);
+    destroyMapNode(mn);
 
     return 0;
 }

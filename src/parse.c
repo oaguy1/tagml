@@ -8,6 +8,7 @@
  *  VER:    0.1
  */
 
+#include <config.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -17,13 +18,13 @@
 #include "map.h"
 
 int parseMap(xmlDocPtr doc, xmlNodePtr cur) {
-
+    return 0;
 }
 
 int parseGame(xmlDocPtr doc, xmlNodePtr cur) {
-
+    return 0;
 }
 
 int parseDoc(char *docname) {
-
+    return 0;
 }
