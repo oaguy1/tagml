@@ -39,7 +39,7 @@ def __init__():
         elif response == "west" or response == "w":
             user_wants_to_move = True
             user_moved = user.moveWest()
-        elif response == "quit" or response == "exit":
+        elif response == "quit" or response == "exit" or response == "q":
             cont = False
         else:
             print("Not a proper command")
