@@ -4,12 +4,6 @@ import player
 import sys
 
 def __init__():
-<<<<<<< HEAD
-    world_map = wm.WorldMap(5,3)
-    world_map.test_fill()
-    print world_map
-    print 'Thank you'
-=======
     if len(sys.argv) != 2:
         print ("Proper usage: python", sys.argv[0], "/path/to/tagml/file")
         return
@@ -55,6 +49,5 @@ def __init__():
             print(worldmap.getNode(user_pos['rows'], user_pos['cols']).getDesc())
         elif user_wants_to_move:
             print("Cannot move further in that direction")
->>>>>>> develop
 
 __init__()
