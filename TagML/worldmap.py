@@ -1,3 +1,5 @@
+
+
 class WorldMapNode(object):
 
     def __init__(self):
@@ -36,6 +38,12 @@ class WorldMap(object):
 
     def getNode(self, row, col):
         return self.map_data[(row, col)]
+
+    def inBounds(self, x, y):
+        if x >= 0 and y >= 0 and x < self.cols and y < self.rows:
+            return True
+        else:
+            return False
 
     def test_fill(self):
         for i in range(self.rows):
