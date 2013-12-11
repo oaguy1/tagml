@@ -15,7 +15,9 @@ def __init__():
 
     cont = True
 
-    user = player.Player(worldmap)
+    player_name = str(input("What is your name? "))
+
+    user = player.Player(worldmap, name = player_name)
     user_pos = user.getPos()
 
     print(worldmap.getNode(user_pos['rows'], user_pos['cols']).getDesc())

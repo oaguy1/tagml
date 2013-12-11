@@ -1,9 +1,8 @@
-
-
 class WorldMapNode(object):
 
     def __init__(self):
         self.desc = ""
+        self.enemies = []
 
     def setDesc(self, string):
         self.desc = string
@@ -13,6 +12,15 @@ class WorldMapNode(object):
 
     def __str__(self):
         return self.desc
+
+    def addEnemy(enemy):
+        self.enemies.append(enemy)
+
+    def  hasEncounter():
+        if not enemies:
+            return False
+        else:
+            return True
 
 class WorldMap(object):
 
