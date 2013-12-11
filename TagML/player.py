@@ -1,9 +1,7 @@
 from random import randrange
 
+class Character(object):
 
-
-class Player(object):
-    
     def __init__(self, worldmap, name = " ", start_col = 0, start_row = 0, 
             AC = 10 + randrange(4), HP = randrange(1, 7), max_attack = 8):
         self.worldmap = worldmap
@@ -22,6 +20,15 @@ class Player(object):
 
     def getPos(self):
         return {'cols' : self.col, 'rows' : self.row}
+
+    def __str__(self):
+        return_string = self.name + '\n'
+        return_string += '=' * len(self.name) + '\n'
+        return_string += "AC :" + str(self.AC) + '\n'
+        return_string += "HP :" + str(self.HP)
+        return return_string
+
+class Player(Character):
 
     def moveNorth(self):
         if self.worldmap.inBounds(self.col, self.row - 1):
@@ -50,11 +57,4 @@ class Player(object):
             return True
         else:
             return False
-
-    def __str__(self):
-        return_string = self.name + '\n'
-        return_string += '=' * len(self.name) + '\n'
-        return_string += "AC :" + str(self.AC) + '\n'
-        return_string += "HP :" + str(self.HP) + '\n'
-        return return_string
 

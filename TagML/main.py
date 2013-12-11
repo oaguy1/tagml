@@ -20,6 +20,8 @@ def __init__():
     user = player.Player(worldmap, name = player_name)
     user_pos = user.getPos()
 
+    print(user)
+
     print(worldmap.getNode(user_pos['rows'], user_pos['cols']).getDesc())
     
     while cont:
