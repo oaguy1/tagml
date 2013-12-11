@@ -57,4 +57,3 @@ class Player(Character):
             return True
         else:
             return False
-

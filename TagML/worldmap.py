@@ -13,11 +13,11 @@ class WorldMapNode(object):
     def __str__(self):
         return self.desc
 
-    def addEnemy(enemy):
+    def addEnemy(self, enemy):
         self.enemies.append(enemy)
 
-    def  hasEncounter():
-        if not enemies:
+    def  hasEncounter(self):
+        if not self.enemies:
             return False
         else:
             return True
