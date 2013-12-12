@@ -65,6 +65,9 @@ class Player(Character):
     def getPos(self):
         return {'col' : self.col, 'row' : self.row}
 
+    def setPos(self, row, col):
+        self.row = row
+        self.col = col
 
     def moveNorth(self):
         if self.worldmap.inBounds(self.col, self.row - 1):

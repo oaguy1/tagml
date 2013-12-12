@@ -16,18 +16,26 @@ class WorldMapNode(object):
     def addEnemy(self, enemy):
         self.enemies.append(enemy)
 
+    def removeEnemy(self, enemy):
+        self.enemies.remove(enemy)
+
     def  hasEncounter(self):
         if not self.enemies:
             return False
         else:
             return True
 
+    def getEnemies(self):
+        return self.enemies
+
 class WorldMap(object):
 
-    def __init__(self,rows,cols):
+    def __init__(self, rows, cols, start_row = 0, start_col = 0):
         self.map_data = {}
         self.rows = rows
         self.cols = cols
+        self.start_row = start_row
+        self.start_col = start_col
 
         for i in range(rows):
             for j in range(cols):
@@ -57,3 +65,9 @@ class WorldMap(object):
         for i in range(self.rows):
             for j in range(self.cols):
                 self.map_data[(i, j)].setDesc(str(i) + ":" + str(j))
+
+    def getStartCol(self):
+        return self.start_col
+
+    def getStartRow(self):
+        return self.start_row

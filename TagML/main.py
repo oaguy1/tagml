@@ -1,9 +1,11 @@
 import worldmap as wm
 import parser
 import player
+import game
 import sys
 
-def __init__():
+
+def main():
     if len(sys.argv) != 2:
         print ("Proper usage: python", sys.argv[0], "/path/to/tagml/file")
         return
@@ -13,43 +15,12 @@ def __init__():
 
     worldmap = parse_result[0][1]
 
-    cont = True
-
     player_name = str(input("What is your name? "))
-
     user = player.Player(worldmap, name = player_name)
-    user_pos = user.getPos()
 
-    print(worldmap.getNode(user_pos['row'], user_pos['col']).getDesc())
-    
-    while cont:
-        response = str(input("What will you do next? "))
-        response = response.lower()
+    game_loop = game.Game(worldmap, user)
 
-        user_wants_to_move = False
-        user_moved = False
+    print("Thank you for using TagML")
 
-        if response == "north" or response == "n":
-            user_wants_to_move = True
-            user_moved = user.moveNorth()
-        elif response == "south" or response == "s":
-            user_wants_to_move = True
-            user_moved = user.moveSouth()
-        elif response == "east" or response == "e":
-            user_wants_to_move = True
-            user_moved = user.moveEast()
-        elif response == "west" or response == "w":
-            user_wants_to_move = True
-            user_moved = user.moveWest()
-        elif response == "quit" or response == "exit" or response == "q":
-            cont = False
-        else:
-            print("Not a proper command")
-
-        if user_wants_to_move and user_moved:
-            user_pos = user.getPos()
-            print(worldmap.getNode(user_pos['row'], user_pos['col']).getDesc())
-        elif user_wants_to_move:
-            print("Cannot move further in that direction")
-
-__init__()
+if __name__ == "__main__":
+    main()
