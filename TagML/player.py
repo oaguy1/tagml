@@ -49,8 +49,9 @@ class Character(object):
     def __str__(self):
         return_string = self.name + '\n'
         return_string += '=' * len(self.name) + '\n'
-        return_string += "AC :" + str(self.AC) + '\n'
-        return_string += "HP :" + str(self.HP)
+        return_string += 'Attack: ' + str(self.max_attack) + '\n'
+        return_string += 'AC: ' + str(self.AC) + '\n'
+        return_string += 'HP: ' + str(self.HP)
         return return_string
 
 class Player(Character):
