@@ -7,7 +7,7 @@ import sys
 
 def main():
     if len(sys.argv) != 2:
-        print ("Proper usage: python", sys.argv[0], "/path/to/tagml/file")
+        print ('Proper usage: python', sys.argv[0], '/path/to/tagml/file')
         return
 
     tagml_parse = parser.Parser(sys.argv[1])
@@ -15,12 +15,19 @@ def main():
 
     worldmap = parse_result[0][1]
 
-    player_name = str(input("What is your name? "))
+    player_name = str(input('What is your name? '))
     user = player.Player(worldmap, name = player_name)
+
+    print()
+    print('Here is your character')
+    print(user)
+    print()
 
     game_loop = game.Game(worldmap, user)
 
-    print("Thank you for using TagML")
+    print()
+    print('Thank you for using TagML')
+    print()
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
