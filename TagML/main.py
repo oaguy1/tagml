@@ -16,6 +16,8 @@ def main():
     worldmap = parse_result['worldmap']
     intro = parse_result['intro']
 
+    print()
+
     if intro is not None and len(intro) > 0:
         print(intro)
         print()
