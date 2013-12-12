@@ -20,7 +20,7 @@ def __init__():
     user = player.Player(worldmap, name = player_name)
     user_pos = user.getPos()
 
-    print(worldmap.getNode(user_pos['rows'], user_pos['cols']).getDesc())
+    print(worldmap.getNode(user_pos['row'], user_pos['col']).getDesc())
     
     while cont:
         response = str(input("What will you do next? "))
@@ -48,7 +48,7 @@ def __init__():
 
         if user_wants_to_move and user_moved:
             user_pos = user.getPos()
-            print(worldmap.getNode(user_pos['rows'], user_pos['cols']).getDesc())
+            print(worldmap.getNode(user_pos['row'], user_pos['col']).getDesc())
         elif user_wants_to_move:
             print("Cannot move further in that direction")
 
