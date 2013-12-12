@@ -6,6 +6,7 @@ class Parser(object):
     def __init__(self, docname):
         self.docname = docname
         self.worldmap = None
+        self.intro = ""
 
         try:
             open(docname)
@@ -14,11 +15,13 @@ class Parser(object):
             quit(1)
 
     def trim(self, string):
-        string = " ".join(string.split())
-        return string
+        return " ".join(string.split())
+
+    def isEmpty(self, string):
+        return string is None or string.isspace()
 
     def parse_cell(self, node, i, j):
-        if node.text is None or node.text.isspace():
+        if self.isEmpty(node.text): 
             print("Map cell {0}:{1} must contain a description".format(i, j))
             quit(1)
         else:
@@ -51,6 +54,12 @@ class Parser(object):
         for current in tree_iter:
             if current.tag == "map":
                 self.parse_map(current)
+            if current.tag == "intro":
+                if self.isEmpty(current.text):
+                    print('Empty "intro" tag, tag must have text or be removed')
+                    quit(1)
+                else:
+                    self.intro = self.trim(current.text)
 
     def parse(self):
         tree = et.parse(self.docname)
@@ -67,4 +76,4 @@ class Parser(object):
             elif current.tag == "meta":
                 pass
 
-        return [('World Map', self.worldmap)]
+        return {'worldmap':self.worldmap, 'intro':self.intro}

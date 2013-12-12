@@ -13,7 +13,12 @@ def main():
     tagml_parse = parser.Parser(sys.argv[1])
     parse_result = tagml_parse.parse()
 
-    worldmap = parse_result[0][1]
+    worldmap = parse_result['worldmap']
+    intro = parse_result['intro']
+
+    if intro is not None and len(intro) > 0:
+        print(intro)
+        print()
 
     player_name = str(input('What is your name? '))
     user = player.Player(worldmap, name = player_name)
