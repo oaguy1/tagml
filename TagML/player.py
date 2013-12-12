@@ -5,10 +5,10 @@ class Character(object):
     def __init__(self, worldmap, name = " ", AC = 10 + randrange(4), 
             HP = randrange(1, 7), max_attack = 8):
         self.worldmap = worldmap
-        self.name = name
-        self.AC = AC
-        self.HP = HP
-        self.max_attack = max_attack
+        self.name = str(name)
+        self.AC = int(AC)
+        self.HP = int(HP)
+        self.max_attack = int(max_attack)
 
     def getName(self):
         return self.name
@@ -35,16 +35,16 @@ class Character(object):
         self.HP += hp
 
     def isDead(self):
-        return self.HP > 0
+        return self.HP <= 0
 
     def attack(self, enemy):
         dice_roll = randrange(1,21)
         if dice_roll >= enemy.getAC():
-            damage = ranrange(self.max_damage)
+            damage = randrange(self.max_attack)
             enemy.takeDamage(damage)
-            print("You hit", enemy.getName(), "for", damage, "damage")
+            print(self.name, "hits", enemy.getName(), "for", damage, "damage")
         else:
-            print("You miss!")
+            print(self.name, "misses!")
 
     def __str__(self):
         return_string = self.name + '\n'

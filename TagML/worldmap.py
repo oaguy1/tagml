@@ -13,8 +13,8 @@ class WorldMapNode(object):
     def __str__(self):
         return self.desc
 
-    def addEnemy(self, enemy):
-        self.enemies.append(enemy)
+    def setEnemies(self, enemies):
+        self.enemies = enemies
 
     def removeEnemy(self, enemy):
         self.enemies.remove(enemy)
