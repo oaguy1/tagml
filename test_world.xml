@@ -1,0 +1,38 @@
+<?xml version="2.0" encoding="UTF-8"?>
+<tagml>
+    <game>
+        <intro>
+            Welcome to the world of Trogld. Treasures and riches await you...if
+            you survive! 
+        </intro>
+        <map rows="2" cols="2" startrow="0" startcol="0">
+            <row>
+                <cell>
+                    You find yourself in the corner of a dark, dank cell. You 
+                    can't see very well and the room is quiet. 
+                </cell>
+                <cell>
+                    You are in anther corner of the cell. You see a bleached
+                    skeleton against the wall, covered in ripped rags. You
+                    smell sulfer in the air.
+                </cell>
+            </row>
+            <row>
+                <cell>
+                    The floor in this corner of the cell is slimey. You slip
+                    while trying to examine the floor. Luckily, you don't seem
+                    to get hurt. You smell sulfer in the air.
+                </cell>
+                <cell>
+                    The smell of sulfer is overpowering now! You bumble your
+                    way into this corner of the cell to find a large, black 
+                    dragon!
+                    <encounter>
+                        <enemy id="dragon" name="Black Dragon"
+                            armor="16" health="14" attack="8" />
+                    </encounter>
+                </cell>
+            </row>
+        </map>
+    </game>
+</tagml>
